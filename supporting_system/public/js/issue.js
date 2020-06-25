@@ -11,13 +11,13 @@ frappe.ui.form.on('Issue',{
 });
 cur_frm.cscript.create_material_request = function(doc){
     frappe.model.open_mapped_doc({
-        method: "supporting_system.supporting_system.doctype.issue.issue.make_material_request1",
+        method: "supporting_system.supporting_system.doctype.issue.issue_custom.make_material_request1",
         frm: cur_frm
     }) 
 };
 cur_frm.cscript.create_expense_claim = function(doc){
     frappe.model.open_mapped_doc({
-        method: "supporting_system.supporting_system.doctype.issue.issue.make_expense_claim",
+        method: "supporting_system.supporting_system.doctype.issue.issue_custom.make_expense_claim",
         frm: cur_frm
     }) 
 };
@@ -26,7 +26,7 @@ frappe.ui.form.on('Issue',{
         if(frm.doc.chargable == 1){
             frm.add_custom_button(__(" Create BOM"), function (){
                 frappe.model.open_mapped_doc({
-                    method: "supporting_system.supporting_system.doctype.issue.issue.make_bom",
+                    method: "supporting_system.supporting_system.doctype.issue.issue_custom.make_bom",
                     frm: cur_frm
                 }) 
             });
@@ -65,7 +65,7 @@ frappe.ui.form.on('Issue',{
         var d = locals[cdt][cdn];
         var customer =d.customer;
         frappe.call({
-            method: "supporting_system.supporting_system.doctype.issue.issue.get_project_details",
+            method: "supporting_system.supporting_system.doctype.issue.issue_custom.get_project_details",
             args:{
                 'customer': d.customer
             },

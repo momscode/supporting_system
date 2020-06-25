@@ -83,7 +83,7 @@ doctype_js = {
 
 doc_events = {
    "Issue":{
- "after_insert":"supporting_system.supporting_system.doctype.issue.issue.on_issue_on_save"
+ "after_insert":"supporting_system.supporting_system.doctype.issue.issue_custom.on_issue_on_save"
    }
 # 	"*": {
 # 		"on_update": "method",
